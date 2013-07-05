@@ -5,4 +5,4 @@ require File.expand_path('../application', __FILE__)
 Wambl::Application.initialize!
 
 # Set ENV
-ENV['RAILS_ENV'] ||= 'developement'
+#ENV['RAILS_ENV'] ||= 'developement'
