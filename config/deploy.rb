@@ -11,6 +11,8 @@ set :scm, "git"
 set :repository, "git@github.com:onlyexcellence/#{application}.git"
 set :branch, "master"
 
+set :rails_env, "test"
+
 default_run_options[:pty] = true
 ssh_options[:forward_agent] = true
 
