@@ -11,13 +11,12 @@ set :scm, "git"
 set :repository, "git@github.com:onlyexcellence/#{application}.git"
 set :branch, "master"
 
-set :rails_env, "test"
-
 default_run_options[:pty] = true
 ssh_options[:forward_agent] = true
 
 task :sandbox do
   
+  set :rails_env, "production"
   server '198.61.169.91', :web, :app, :db, primary: true
   
 end
