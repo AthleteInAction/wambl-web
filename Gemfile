@@ -45,3 +45,4 @@ gem 'capistrano'
 # gem 'debugger', group: [:development, :test]
 
 gem 'mysql2'
+gem 'rvm-capistrano'
