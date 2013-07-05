@@ -16,7 +16,7 @@ ssh_options[:forward_agent] = true
 
 task :sandbox do
   
-  set :rails_env, "production"
+  set :rails_env, "test"
   server '198.61.169.91', :web, :app, :db, primary: true
   
 end
