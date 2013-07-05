@@ -36,6 +36,7 @@ namespace :deploy do
     run "mkdir -p #{shared_path}/config"
     put File.read("config/database.example.yml"), "#{shared_path}/config/database.yml"
     put File.read("config/environment.example.rb"), "#{shared_path}/config/environment.rb"
+    put File.read("config/nginx.example.conf"), "#{shared_path}/config/nginx.conf"
     puts "Now edit the config files in #{shared_path}."
   end
   after "deploy:setup", "deploy:setup_config"
@@ -43,6 +44,7 @@ namespace :deploy do
   task :symlink_config, roles: :app do
     run "ln -nfs #{shared_path}/config/database.yml #{release_path}/config/database.yml"
     run "ln -nfs #{shared_path}/config/environment.rb #{release_path}/config/environment.rb"
+    run "ln -nfs #{shared_path}/config/nginx.conf #{release_path}/config/nginx.conf"
   end
   after "deploy:finalize_update", "deploy:symlink_config"
 
