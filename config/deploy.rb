@@ -1,8 +1,6 @@
 require "rvm/capistrano"
 require "bundler/capistrano"
 
-server '198.61.169.91', :web, :app, :db, primary: true
-
 set :application, "wambl"
 set :user, "deployer"
 set :deploy_to, "/home/#{user}/apps/#{application}"
@@ -15,6 +13,12 @@ set :branch, "master"
 
 default_run_options[:pty] = true
 ssh_options[:forward_agent] = true
+
+task :sandbox do
+  
+  server '198.61.169.91', :web, :app, :db, primary: true
+  
+end
 
 after "deploy", "deploy:cleanup" # keep only the last 5 releases
 
