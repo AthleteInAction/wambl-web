@@ -14,7 +14,7 @@ set :branch, "master"
 default_run_options[:pty] = true
 ssh_options[:forward_agent] = true
 
-task :sandbox do
+task :live do
   
   set :rails_env, "production"
   server '198.61.169.91', :web, :app, :db, primary: true
