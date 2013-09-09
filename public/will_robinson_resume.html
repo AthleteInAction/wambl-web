@@ -107,7 +107,12 @@ a:active {text-decoration:underline;}
       <div>Built from scratch application for migrating Zendesk customer's data from outside sources (Zendesk, Desk.com, Salesforce, CSV...) into Zendesk</div>
       <ul>
         <li>multithreaded to allow importing tickets at a rate of over 2500/min</li>
-        <li>Built from Ruby on Rails, HTML, Javascript (AngularJS), MySQL, <A href="http://developer.zendesk.com" target="_blank">Zendesk REST API</a></li>
+        <li>custom field mapping</li>
+        <li>conditional field mapping and rules</li>
+        <li>saved states</li>
+        <li>background processing (allows for run and forget, or to monitor remotely)</li>
+        <li>rollback feature</li>
+        <li>Built from Ruby on Rails, Sidekiq, Redis Server, Capistrano Deployment, HTML, Javascript (AngularJS), MySQL, <A href="http://developer.zendesk.com" target="_blank">Zendesk REST API</a></li>
       </ul>
     </li>
   </ul>
